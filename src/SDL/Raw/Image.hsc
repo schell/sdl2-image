@@ -84,9 +84,13 @@ getVersion = liftIO getVersion'
 
 type InitFlags = CInt
 
+pattern IMG_INIT_JPG :: forall a. (Num a, Eq a) => a
 pattern IMG_INIT_JPG  = #{const IMG_INIT_JPG}
+pattern IMG_INIT_PNG  :: forall a. (Num a, Eq a) => a
 pattern IMG_INIT_PNG  = #{const IMG_INIT_PNG}
+pattern IMG_INIT_TIF  :: forall a. (Num a, Eq a) => a
 pattern IMG_INIT_TIF  = #{const IMG_INIT_TIF}
+pattern IMG_INIT_WEBP  :: forall a. (Num a, Eq a) => a
 pattern IMG_INIT_WEBP = #{const IMG_INIT_WEBP}
 
 foreign import ccall safe "static IMG_Init" init' :: InitFlags -> IO InitFlags
